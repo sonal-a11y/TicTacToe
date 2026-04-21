@@ -19,7 +19,7 @@
         }
     }
 }
-*/
+
 public class TicTacToe {
     public static void main(String[] args) {
 
@@ -48,5 +48,24 @@ public class TicTacToe {
         System.out.println(currentPlayer + " starts first!");
         System.out.println(player1 + " symbol: " + symbol1);
         System.out.println(player2 + " symbol: " + symbol2);
+    }
+}
+*/
+public class TicTacToe {
+
+    // Method to get slot input from user
+    public static int getSlot() {
+        java.util.Scanner sc = new java.util.Scanner(System.in);
+
+        System.out.print("Enter slot number (1-9): ");
+        int slot = sc.nextInt();
+
+        return slot;
+    }
+
+    public static void main(String[] args) {
+        int chosenSlot = getSlot();
+
+        System.out.println("You selected slot: " + chosenSlot);
     }
 }
