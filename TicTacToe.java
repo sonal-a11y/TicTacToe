@@ -111,7 +111,7 @@ public class TicTacToe {
             System.out.println("Invalid Move");
     }
 }
-*/
+
 public class TicTacToe {
 
     // Method to place symbol on board
@@ -128,6 +128,53 @@ public class TicTacToe {
         };
 
         placeMove(board, 1, 1, 'X');
+
+        // Display board
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                System.out.print(board[i][j] + " ");
+            }
+            System.out.println();
+        }
+    }
+}*/
+public class TicTacToe {
+
+    // Check valid move
+    public static boolean isValid(char[][] b, int r, int c) {
+        return r >= 0 && r < 3 && c >= 0 && c < 3 && b[r][c] == '-';
+    }
+
+    // Place move
+    public static void place(char[][] b, int r, int c, char s) {
+        b[r][c] = s;
+    }
+
+    // Computer move
+    public static void computerMove(char[][] board, char symbol) {
+        while (true) {
+            int slot = (int)(Math.random() * 9) + 1;
+
+            int row = (slot - 1) / 3;
+            int col = (slot - 1) % 3;
+
+            if (isValid(board, row, col)) {
+                place(board, row, col, symbol);
+                System.out.println("Computer chose slot: " + slot);
+                break;
+            }
+        }
+    }
+
+    public static void main(String[] args) {
+
+        char[][] board = {
+            {'-', '-', '-'},
+            {'-', '-', '-'},
+            {'-', '-', '-'}
+        };
+
+        computerMove(board, 'O');
 
         // Display board
         for (int i = 0; i < 3; i++) {
