@@ -69,7 +69,7 @@ public class TicTacToe {
         System.out.println("You selected slot: " + chosenSlot);
     }
 }
-*/
+
 public class TicTacToe {
 
     // Method to convert slot into row and column
@@ -84,5 +84,30 @@ public class TicTacToe {
     public static void main(String[] args) {
         int slot = 5; // example input
         convertSlot(slot);
+    }
+}
+*/
+public class TicTacToe {
+
+    public static boolean isValidMove(char[][] board, int row, int col) {
+        return (row >= 0 && row < 3 &&
+                col >= 0 && col < 3 &&
+                board[row][col] == '-');
+    }
+
+    public static void main(String[] args) {
+
+        char[][] board = {
+            {'-', '-', '-'},
+            {'-', '-', '-'},
+            {'-', '-', '-'}
+        };
+
+        int row = 1, col = 2;
+
+        if (isValidMove(board, row, col))
+            System.out.println("Valid Move");
+        else
+            System.out.println("Invalid Move");
     }
 }
