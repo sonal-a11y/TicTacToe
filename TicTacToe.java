@@ -86,7 +86,7 @@ public class TicTacToe {
         convertSlot(slot);
     }
 }
-*/
+
 public class TicTacToe {
 
     public static boolean isValidMove(char[][] board, int row, int col) {
@@ -109,5 +109,32 @@ public class TicTacToe {
             System.out.println("Valid Move");
         else
             System.out.println("Invalid Move");
+    }
+}
+*/
+public class TicTacToe {
+
+    // Method to place symbol on board
+    public static void placeMove(char[][] board, int row, int col, char symbol) {
+        board[row][col] = symbol;
+    }
+
+    public static void main(String[] args) {
+
+        char[][] board = {
+            {'-', '-', '-'},
+            {'-', '-', '-'},
+            {'-', '-', '-'}
+        };
+
+        placeMove(board, 1, 1, 'X');
+
+        // Display board
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                System.out.print(board[i][j] + " ");
+            }
+            System.out.println();
+        }
     }
 }
