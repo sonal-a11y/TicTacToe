@@ -50,7 +50,7 @@ public class TicTacToe {
         System.out.println(player2 + " symbol: " + symbol2);
     }
 }
-*/
+
 public class TicTacToe {
 
     // Method to get slot input from user
@@ -67,5 +67,22 @@ public class TicTacToe {
         int chosenSlot = getSlot();
 
         System.out.println("You selected slot: " + chosenSlot);
+    }
+}
+*/
+public class TicTacToe {
+
+    // Method to convert slot into row and column
+    public static void convertSlot(int slot) {
+        int row = (slot - 1) / 3;
+        int col = (slot - 1) % 3;
+
+        System.out.println("Row: " + row);
+        System.out.println("Column: " + col);
+    }
+
+    public static void main(String[] args) {
+        int slot = 5; // example input
+        convertSlot(slot);
     }
 }
